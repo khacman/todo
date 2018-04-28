@@ -9,7 +9,7 @@ describe("Todo", () => {
         active: true
     };
     it("Should render", () => {
-        const wrapper = shallow(<Todo todo={todo}/>);
+        const wrapper = shallow(<Todo todo={todo} />);
         expect(wrapper.text()).toContain(todo.content);
     });
 });
