@@ -5,21 +5,21 @@ export const TOGGLE_TODO = `${ACTION}/TOGGLE_TODO`;
 // Reducer
 export default function reducer(state = {}, action) {
     switch (action.type) {
-        case ADD_TODO:
-            return {
-                ...state,
-                [action.todo.id]: action.todo
-            };
-        case TOGGLE_TODO:
-            return {
-                ...state,
-                [action.id]: {
-                    ...state[action.id],
-                    active: !state[action.id].active
-                }
-            };
-        default:
-            return state;
+    case ADD_TODO:
+        return {
+            ...state,
+            [action.todo.id]: action.todo
+        };
+    case TOGGLE_TODO:
+        return {
+            ...state,
+            [action.id]: {
+                ...state[action.id],
+                active: !state[action.id].active
+            }
+        };
+    default:
+        return state;
     }
 }
 // Action Creators
