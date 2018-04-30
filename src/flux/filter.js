@@ -1,4 +1,4 @@
-const FILTER = Object.freeze({
+export const FILTER = Object.freeze({
     SHOW_ALL: "SHOW_ALL",
     SHOW_ACTIVE: "SHOW_ACTIVE",
     SHOW_COMPLETED: "SHOW_COMPLETED"

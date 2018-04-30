@@ -2,6 +2,7 @@ import React from "react";
 import VisibleTodoList from "./VisibleTodoList";
 import AddTodo from "./AddTodo";
 import { Container, Row } from "reactstrap";
+import Filter from "./Filters";
 
 export class App extends React.Component {
     render() {
@@ -16,6 +17,7 @@ export class App extends React.Component {
                 <Row>
                     <VisibleTodoList />
                 </Row>
+                <Filter />
             </Container>
         );
     }
