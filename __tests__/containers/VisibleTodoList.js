@@ -1,4 +1,7 @@
-import {getTodoListFrom, mapStateToProps} from "../../src/containers/VisibleTodoList";
+import {
+    getTodoListFrom,
+    mapStateToProps
+} from "../../src/containers/VisibleTodoList";
 
 describe("VisibleTodoListContainer", () => {
     const cases = [
@@ -31,15 +34,16 @@ describe("VisibleTodoListContainer", () => {
     ];
 
     test("getTodolListFrom", () => {
-
         cases.forEach(c => {
-            expect(getTodoListFrom({todos: c.todos})).toEqual(c.expected);
+            expect(getTodoListFrom({ todos: c.todos })).toEqual(c.expected);
         });
     });
 
     test("mapStateToProps", () => {
         cases.forEach(c => {
-            expect(mapStateToProps({ todos: c.todos })).toEqual({todos: c.expected});
+            expect(mapStateToProps({ todos: c.todos })).toEqual({
+                todos: c.expected
+            });
         });
     });
 });

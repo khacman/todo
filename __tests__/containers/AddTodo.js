@@ -1,6 +1,6 @@
 import React from "react";
 import { mount } from "enzyme";
-import {AddTodo} from "../../src/containers/AddTodo";
+import { AddTodo } from "../../src/containers/AddTodo";
 import sinon from "sinon";
 
 function setup() {
@@ -16,14 +16,16 @@ function setup() {
 }
 
 describe("AddTodo Container", () => {
-
     test("Should handle submit", () => {
         sinon.spy(AddTodo.prototype, "handleSubmit");
-        const {props, wrapper} = setup();
+        const { props, wrapper } = setup();
         wrapper.setState({
             value: "Hello World"
         });
-        wrapper.find("Form").props().onSubmit({preventDefault: sinon.spy()});
+        wrapper
+            .find("Form")
+            .props()
+            .onSubmit({ preventDefault: sinon.spy() });
         expect(AddTodo.prototype.handleSubmit.calledOnce).toBe(true);
         expect(wrapper.state().value).toBe("");
         expect(props.dispatch.calledOnce).toBe(true);
@@ -34,7 +36,10 @@ describe("AddTodo Container", () => {
             value: "Hello world"
         };
         const { wrapper } = setup();
-        wrapper.find("Input").props().onChange({target: input});
+        wrapper
+            .find("Input")
+            .props()
+            .onChange({ target: input });
         expect(wrapper.state().value).toBe(input.value);
     });
 });
