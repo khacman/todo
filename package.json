@@ -10,7 +10,7 @@
     "build": "webpack",
     "lint": "eslint --fix src __tests__",
     "start": "webpack-dev-server --open",
-    "test": "jest --coverage",
+    "test": "jest --coverage && eslint src __tests__",
     "test.quick": "jest"
   },
   "devDependencies": {
