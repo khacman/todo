@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { TodoList } from "../components/TodoList";
 import { FILTER } from "../flux/filter";
+import { toggleTodo } from "../flux/todos";
 
 export function getTodoListFrom(state) {
     const fullList = Object.values(state.todos);
@@ -20,4 +21,12 @@ export function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps)(TodoList);
+export function mapDispatchToProps(dispatch) {
+    return {
+        toggleTodo: id => {
+            dispatch(toggleTodo(id));
+        }
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList);

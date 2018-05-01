@@ -1,7 +1,9 @@
 import {
     getTodoListFrom,
+    mapDispatchToProps,
     mapStateToProps
 } from "../../src/containers/VisibleTodoList";
+import { toggleTodo } from "../../src/flux/todos";
 
 describe("VisibleTodoListContainer", () => {
     const cases = [
@@ -96,5 +98,14 @@ describe("VisibleTodoListContainer", () => {
                 todos: c.expected
             });
         });
+    });
+
+    test("mapDispatchToProps", () => {
+        const dispatch = jest.fn();
+        const props = mapDispatchToProps(dispatch);
+        const id = 24;
+        props.toggleTodo(id);
+        expect(dispatch).toHaveBeenCalledTimes(1);
+        expect(dispatch).toHaveBeenCalledWith(toggleTodo(id));
     });
 });

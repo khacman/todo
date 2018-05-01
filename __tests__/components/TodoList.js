@@ -16,13 +16,18 @@ describe("TodoList", () => {
             active: false
         }
     ];
+    const mockToggleTodo = jest.fn();
     it("Should render with Todo components", () => {
-        const wrapper = shallow(<TodoList todos={todos} />);
+        const wrapper = shallow(
+            <TodoList todos={todos} toggleTodo={mockToggleTodo} />
+        );
         expect(wrapper.find(Todo)).toHaveLength(2);
     });
 
     it("Should render no Todo component", () => {
-        const wrapper = shallow(<TodoList todos={[]} />);
+        const wrapper = shallow(
+            <TodoList todos={[]} toggleTodo={mockToggleTodo} />
+        );
         expect(wrapper.find(Todo)).toHaveLength(0);
     });
 });
