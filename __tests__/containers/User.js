@@ -8,7 +8,11 @@ describe("User Container", () => {
             dispatch: jest.fn(),
             user: {
                 isLoading: false,
-                userData: {}
+                userData: {
+                    id: 1,
+                    name: "Man",
+                    language: "JS"
+                }
             }
         };
         const wrapper = shallow(<User {...props} />);
