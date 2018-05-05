@@ -4,6 +4,10 @@ test("Store creation", () => {
     expect(store).toBeDefined();
     expect(store.getState()).toEqual({
         todos: {},
-        filter: "SHOW_ALL"
+        filter: "SHOW_ALL",
+        user: {
+            isLoading: false,
+            userData: {}
+        }
     });
 });
