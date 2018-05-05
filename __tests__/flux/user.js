@@ -36,12 +36,12 @@ describe("user store", () => {
                     },
                     action: {
                         type: SET_USER,
-                        data: {name: "Hello World"}
+                        data: { name: "Hello World" }
                     }
                 },
                 expected: {
                     isLoading: false,
-                    userData: {name: "Hello World"}
+                    userData: { name: "Hello World" }
                 }
             },
             {
